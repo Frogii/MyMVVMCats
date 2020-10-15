@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cats_nav_graph"
+    app:startDestination="@id/catsListFragment">
+    <fragment
+        android:id="@+id/catsListFragment"
+        android:name="com.example.mymvvmcats.ui.fragments.CatsListFragment"
+        android:label="fragment_cats_list"
+        tools:layout="@layout/fragment_cats_list">
+        <action
+            android:id="@+id/action_catsListFragment_to_catFragment"
+            app:destination="@id/catFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/catFragment"
+        android:name="com.example.mymvvmcats.ui.fragments.CatFragment"
+        android:label="fragment_cat"
+        tools:layout="@layout/fragment_cat" >
+        <argument
+            android:name="cat"
+            app:argType="com.example.mymvvmcats.model.Cat" />
+    </fragment>
+    <fragment
+        android:id="@+id/favCatFragment"
+        android:name="com.example.mymvvmcats.ui.fragments.FavCatFragment"
+        android:label="fragment_fav_cat"
+        tools:layout="@layout/fragment_fav_cat">
+        <action
+            android:id="@+id/action_favCatFragment2_to_catFragment"
+            app:destination="@id/catFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>
